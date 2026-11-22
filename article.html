@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقاله | مجله سیمین مهر</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="439ed531-b0fb-4c01-aeb2-7128bb452a88-edit_image_img_0tdgtlp7xrn2hlSwZK3u3.png" alt="سیمین مهر" class="main-logo">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">🏠 فروشگاه</a>
+                <a href="magazine.html" class="nav-link active">📖 مجله</a>
+            </nav>
+            <div class="user-actions" style="margin-right:auto">
+                <button class="icon-btn" id="cart-btn-page" title="سبد خرید">
+                    🛒 <span class="badge" id="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="article-loading" class="loading">در حال بارگذاری مقاله...</div>
+        <div id="article-detail" class="article-detail-container hidden"></div>
+        <section id="related-articles-section" class="related-articles"></section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <img src="dfaa09f8-b602-4d89-9611-a6e2649472cd.webp" alt="لوگوی سیمین مهر" style="height: 60px; margin: 0 auto 12px; border-radius: 10px;">
+            <p>© 2025 SIMIN MEHR — هر محصول، یک داستان...</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="cart-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>🛒 سبد خرید شما</h2>
+                <button class="close-btn" onclick="closeModal('cart-modal')">✖</button>
+            </div>
+            <div class="modal-body" id="cart-items"></div>
+            <div class="modal-footer" id="cart-footer">
+                <p>مبلغ کل: <strong><span id="cart-total">0</span> تومان</strong></p>
+                <button class="btn-primary" id="checkout-btn">ثبت سفارش</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="dashboard-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>داشبورد کاربری</h2>
+                <button class="close-btn" onclick="closeModal('dashboard-modal')">✖</button>
+            </div>
+            <div class="modal-body" id="dashboard-content"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="checkout-modal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h2>تکمیل سفارش</h2>
+                <button class="close-btn" onclick="closeModal('checkout-modal')">✖</button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-summary" id="checkout-summary"></div>
+                <form class="checkout-form" id="checkout-form">
+                    <div class="form-group">
+                        <label>نام گیرنده</label>
+                        <input type="text" id="checkout-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>شماره تماس</label>
+                        <input type="tel" id="checkout-phone" placeholder="09xxxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label>آدرس کامل</label>
+                        <textarea id="checkout-address" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>روش پرداخت</label>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="online" checked>
+                                <span>💳 پرداخت آنلاین</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod">
+                                <span>💰 پرداخت در محل</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary btn-lg">ثبت نهایی سفارش</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
